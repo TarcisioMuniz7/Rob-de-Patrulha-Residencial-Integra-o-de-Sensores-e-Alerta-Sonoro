@@ -1,7 +1,15 @@
-# Robô-de-Patrulha-Residencial --Integração-de-Sensores-e-Alerta-Sonoro
+# Robô de Patrulha Residencial (Integração de Sensores e Alerta Sonoro)
 Robô de segurança residencial com Arduino, capaz de detectar presença com sensores PIR ou ultrassônicos. Emite alarme sonoro ao identificar intrusos e se move autonomamente para monitorar diferentes áreas da casa.
+<h2> Imagem em Miniatura [Editada] </h2>
 
-  <img src=" " />
+![430x430](https://github.com/user-attachments/assets/3fcf40a7-da7c-41e9-9e30-e49a3ae93f52)
+
+![820x917_](https://github.com/user-attachments/assets/74cfa81d-6869-4b4c-a858-b1584da04868)
+
+
+
+  ![Foto do robô (Editada) (2)](https://github.com/user-attachments/assets/25fde635-f954-4c63-bb62-54488ad9be7c)
+ 
  <p> Projeto - Robô Patrulha </p>
  </h1>
 
