@@ -17,13 +17,28 @@ Robô de segurança residencial com Arduino, capaz de detectar presença com sen
  Projeto desenvolvido por:
 
  ## Componentes
-
+### Placas
  - Placa Arduino Uno 
- - Placa Arduino Mega
- - Placa de Ensaio (Protoboard)
+ - Placa Arduino Esp
+ - Placa de Ensaio (Mini Protoboard)
+   
+### Sensores
  - Sensor PIR
  - Sensor Ultrassônico
- - Duas Rodas, 2 Pilhas Grandes (Tamanho | Voltagem), e Estética
+   
+### Atuadores
+ - Dois Motores DC (3v-6v)
+ - Buzzer Ativo
+ - Ponte H 
+ - Suporte a Pilhas
+ -  2 Pilhas Grandes (Tamanho | Voltagem)
+   
+### Estética
+ - Chassi
+ - Duas Rodas + Uma Roda Boba
+   
+>[!Note]
+> Faltam apenas os Jumpers Macho. Basta ver quantos pinos possuem os sensores para o Cálculo (e o Buzzer).
 
  ## Objetivo
 
@@ -91,28 +106,29 @@ Produzido para:
 -- Calibração do Sensor
 -- Análise de erros físicos ou bugs */
 
-#define PIR 2
-#define LED 3
+#define PIR 2 // Pino de dados do PIR
+#define LED 3 // Pino de alimentação da LED 
 
-
+/* Não ligue a LED sem Resistor  | Não necessita do LED para o Teste*/
 
 void setup() {
-	pinMode(PIR, INPUT);
-	pinMode(LED, OUTPUT);
-	Serial.begin(9600);
-	
-	
+
+	pinMode(PIR, INPUT); // Define PIR (Conexão ao Pino) para Entrada de Dados ao Arduino
+	pinMode(LED, OUTPUT); // Define LED para Saída de Dados do Arduino
+	Serial.begin(9600); // Conexão Serial para Amostra/Avaliação dos Dados
 }	
 
 void loop() {
-	if (digitalRead(PIR == HIGH)) {
-		digitalWrite(LED, HIGH);
+
+	if (digitalRead(PIR == HIGH)) {        // Se o sensor PIR ler e reagir com impulso elétrico alto.. (Detectar calor)
+		digitalWrite(LED, HIGH);      // Envie (write) energia (HIGH) máxima da porta 2 (LED) do arduino (5v)  para LED  // Liga a LED  
+		Serial.write("Algo quente ou alguém próximo a máquina"); // Enviar mensagem para Monitor Serial  //Confirme no Monitor Serial (Computador + IDE)
 	} else {
-		digitalWrite(LED, LOW);
-	}
-	
-	Serial.write("Algo quente ou alguém próximo a máquina");
+		digitalWrite(LED, LOW); //Envie a energia mínima (LOW) do Arduino (0v) da porta 2 (LED) para a LED // Desliga a LED
+		}
 }
+	
+	
 ~~~
 </details>
 
